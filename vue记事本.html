@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue记事本</title>
+    <link rel="stylesheet" type="text/css" href="css/记事本样式.css" />
+  </head>
+  <body>
+    <!-- 设置元素开始 -->
+    <section id="totalApp">
+      <header><h1 id="noteTitle">小孟记事本</h1></header>
+      <!-- 输入框 -->
+      <input
+        v-model="noteMessage"
+        @keyup.enter="addNote"
+        type="text"
+        placeholder="请输入待办事项"
+        autofocus
+        autocomplete="off"
+        id="noteInput"
+      />
+      <!-- 下拉列表区域开始 -->
+      <ul id="noteList">
+        <li id="notes" v-for="(item,ind) in listArr">
+          <div id="singleNote">
+            <span id="index">{{ind+1+'.'}}</span>
+            <label id="noteThing">{{item}}</label>
+            <button id="delete" @click="remove(ind)">×</button>
+          </div>
+        </li>
+      </ul>
+      <!-- 下拉列表区域结束 -->
+      <!-- 页脚部分开始 -->
+      <div id="footer">
+        <span id="remainThings">剩余待办事项数量：</span>
+        <span id="count">{{listArr.length}}</span>
+        <span id="clear" @click="clearAll" v-if="listArr.length!=0">Clear</span>
+      </div>
+      <!-- 页脚部分结束 -->
+    </section>
+    <!-- 设置元素结束 -->
+    <!-- 导入开发版vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- vue设置开始 -->
+    <script>
+      var app = new Vue({
+        el: "#totalApp",
+        data: {
+          listArr: [],
+          noteMessage: "好好学习前端",
+        },
+        methods: {
+          addNote: function () {
+            this.listArr.push(this.noteMessage);
+            this.noteMessage = "";
+          },
+          clearAll: function () {
+            this.listArr = [];
+            this.noteMessage = "好好学习前端";
+          },
+          remove: function (index) {
+            this.listArr.splice(index, 1);
+            if (this.listArr.length == 0) {
+              this.noteMessage = "好好学习前端";
+            }
+          },
+        },
+      });
+    </script>
+    <!-- vue设置结束 -->
+  </body>
+</html>

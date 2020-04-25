@@ -1,0 +1,91 @@
+#totalApp {
+  margin: 30px auto;
+  height: 300px;
+  width: 500px;
+  text-align: center;
+}
+#noteTitle {
+  color: rgb(58, 5, 5);
+  font-family: 楷体;
+  font-weight: lighter;
+  margin-bottom: 30px;
+}
+form {
+  width: 313px;
+  margin: 0 auto;
+  box-shadow: 6px 6px 3px rgb(212, 212, 206);
+}
+#noteInput {
+  height: 35px;
+  width: 310px;
+  font-size: 16px;
+  font-family: "幼圆";
+  padding: 0;
+  background-color: blanchedalmond;
+}
+#noteList {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+}
+li {
+  margin: 0 auto;
+  width: 310px;
+}
+#singleNote {
+  position: relative;
+  left: -2px;
+  height: 37px;
+  width: 313px;
+  border: solid rgb(169, 169, 169) 0.5px;
+  border-top: 0;
+  line-height: 37px;
+  margin: 0;
+  font-size: 16px;
+  font-family: "幼圆";
+  background-color: blanchedalmond;
+}
+#index {
+  position: absolute;
+  left: 3px;
+}
+#noteThing {
+  position: absolute;
+  left: 22px;
+}
+#delete {
+  display: none;
+  position: absolute;
+  right: 3px;
+  top: 10px;
+  border: 0;
+  cursor: pointer;
+}
+#singleNote:hover #delete {
+  display: inline-block;
+}
+#footer {
+  padding: 0;
+  margin: 0 auto;
+  border: solid rgb(169, 169, 169) 0.5px;
+  border-top: 0;
+  width: 313px;
+  height: 25px;
+  font-size: 11px;
+  font-family: "宋体";
+  line-height: 25px;
+  background-color: blanchedalmond;
+}
+#remainThings {
+  float: left;
+}
+#count {
+  float: left;
+}
+#clear {
+  float: right;
+  cursor: pointer;
+}
+#clear:hover {
+  text-decoration: underline;
+}
